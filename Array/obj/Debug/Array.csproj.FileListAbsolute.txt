@@ -1,0 +1,7 @@
+C:\C++\Array\Array\bin\Debug\Array.exe.config
+C:\C++\Array\Array\bin\Debug\Array.exe
+C:\C++\Array\Array\bin\Debug\Array.pdb
+C:\C++\Array\Array\obj\Debug\Array.csproj.AssemblyReference.cache
+C:\C++\Array\Array\obj\Debug\Array.csproj.CoreCompileInputs.cache
+C:\C++\Array\Array\obj\Debug\Array.exe
+C:\C++\Array\Array\obj\Debug\Array.pdb
