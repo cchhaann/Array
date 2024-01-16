@@ -65,7 +65,7 @@ namespace Array
             //        Console.WriteLine($"{x}索引值為{i}");
             //        break;
             //    }
-            //    if (x != searcharry[i])
+            //    if (i == searcharry.Length - 1)
             //    {
             //        Console.WriteLine($"不存在");
             //        break;
@@ -146,7 +146,7 @@ namespace Array
             //    {
             //        for (int z = 0; z < 3; z++)
             //        {
-            //            arrayC[i, j] = arrayA[i, z] * arrayB[z, j];
+            //            arrayC[i, j] += arrayA[i, z] * arrayB[z, j];
             //        }
             //    }
             //}
@@ -184,7 +184,7 @@ namespace Array
             //{
             //    Console.Write($"第{i + 1}個數值為");
             //    arrayA[i] = Convert.ToInt32(Console.ReadLine());
-            //    arrayA[i] += 1;
+            //    arrayA[i] += i;
             //}
             //foreach (int item in arrayA)
             //{
@@ -217,38 +217,40 @@ namespace Array
 
 
             //p.20 ch5-4 將15個數字3×5的二維陣列A中，求每一行及每一列數字的和。
-            //int[,] arrayA = new int[3, 5];
-            //Console.WriteLine($"請輸入A陣列的值");
-            //for (int i = 0; i < 3; i++)
-            //{
-            //    for (int j = 0; j < 5; j++)
-            //    {
-            //        Console.Write($"A陣列第{i},{j}個數值為");
-            //        arrayA[i, j] = Convert.ToInt32(Console.ReadLine());
+            int[,] arrayA = new int[3, 5];
+            Console.WriteLine($"請輸入A陣列的值");
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 5; j++)
+                {
+                    Console.Write($"A陣列第{i},{j}個數值為");
+                    arrayA[i, j] = Convert.ToInt32(Console.ReadLine());
 
-            //    }
-            //}
-            ////每一行(Column)
-            //int colsum = 0;
-            //for (int i = 0; i < 3; i++)
-            //{
-            //    for (int j = 0; j < 5; j++)
-            //    {
-            //        colsum += arrayA[i, j];
-            //    }
-            //    Console.WriteLine($"第{i + 1}行的和為：{colsum}");
-            //}
+                }
+            }
+            //每一行(Column)
+            
+            for (int i = 0; i < 3; i++)
+            {
+                int colsum = 0;
+                for (int j = 0; j < 5; j++)
+                {
+                    colsum += arrayA[i, j];
+                }
+                Console.WriteLine($"第{i + 1}行的和為：{colsum}");
+            }
             //每一列(Row)
-            //int rowsum = 0;
-            //for (int j = 0; j < 5; j++)
-            //{
-            //    for (int i = 0; i < 3; i++)
-            //    {
-            //        rowsum += arrayA[i, j];
-            //    }
-            //    Console.WriteLine($"第{j + 1}列的和為：{rowsum}");
-            //}
-            //Console.ReadKey();
+            
+            for (int j = 0; j < 5; j++)
+            {
+                int rowsum = 0;
+                for (int i = 0; i < 3; i++)
+                {
+                    rowsum += arrayA[i, j];
+                }
+                Console.WriteLine($"第{j + 1}列的和為：{rowsum}");
+            }
+            Console.ReadKey();
 
             //p.29 ch5-5 將15個數字3×5的二維陣列A中，求每一行及每一列數字的最小值
             //int[,] arrayA = new int[3, 5];
@@ -313,49 +315,49 @@ namespace Array
             //Console.ReadKey();
 
             //p.29 ch5-7 兩組數字：a1,a2,…,a5和b1,b2,…,b5。令x為a中的最大值，令y為b中的最大值，求x與y中較小者
-            int[] arrayA = new int[5];
-            int[] arrayB = new int[5];
-            for (int i = 0; i < arrayA.Length; i++)
-            {
-                Console.Write($"a{i + 1}個值為:");
-                arrayA[i] = Convert.ToInt32(Console.ReadLine());
-            }
-            int x = int.MinValue;
-            foreach (int item in arrayA)
-            {
-                if (item > x)
-                {
-                    x = item;
-                }
-            }
-            Console.WriteLine($"arrayA最大值為{x}");
-            for (int i = 0; i < arrayB.Length; i++)
-            {
-                Console.Write($"b{i + 1}個值為:");
-                arrayB[i] = Convert.ToInt32(Console.ReadLine());
-            }
-            int y = int.MinValue;
-            foreach (int item in arrayB)
-            {
-                if (item > y)
-                {
-                    y = item;
-                }
-            }
-            Console.WriteLine($"arrayB最大值為{y}");
-            if (x < y)
-            {
-                Console.WriteLine($"最大值相比後的最小值為{x}");
-            }
-            else if (x == y)
-            {
-                Console.WriteLine($"arrayA及arrayB兩者值一樣");
-            }
-            else
-            {
-                Console.WriteLine($"arrayA及arrayB最大值相比後的最小值為{y}");
-            }
-            Console.ReadKey();
+            //int[] arrayA = new int[5];
+            //int[] arrayB = new int[5];
+            //for (int i = 0; i < arrayA.Length; i++)
+            //{
+            //    Console.Write($"a{i + 1}個值為:");
+            //    arrayA[i] = Convert.ToInt32(Console.ReadLine());
+            //}
+            //int x = int.MinValue;
+            //foreach (int item in arrayA)
+            //{
+            //    if (item > x)
+            //    {
+            //        x = item;
+            //    }
+            //}
+            //Console.WriteLine($"arrayA最大值為{x}");
+            //for (int i = 0; i < arrayB.Length; i++)
+            //{
+            //    Console.Write($"b{i + 1}個值為:");
+            //    arrayB[i] = Convert.ToInt32(Console.ReadLine());
+            //}
+            //int y = int.MinValue;
+            //foreach (int item in arrayB)
+            //{
+            //    if (item > y)
+            //    {
+            //        y = item;
+            //    }
+            //}
+            //Console.WriteLine($"arrayB最大值為{y}");
+            //if (x < y)
+            //{
+            //    Console.WriteLine($"最大值相比後的最小值為{x}");
+            //}
+            //else if (x == y)
+            //{
+            //    Console.WriteLine($"arrayA及arrayB兩者值一樣");
+            //}
+            //else
+            //{
+            //    Console.WriteLine($"arrayA及arrayB最大值相比後的最小值為{y}");
+            //}
+            //Console.ReadKey();
         }
     }
 }
